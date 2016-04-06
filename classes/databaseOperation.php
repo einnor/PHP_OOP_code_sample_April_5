@@ -21,8 +21,8 @@
         $ss = "INSERT INTO email(email, subject, body) VALUES(?, ?, ?)";
         $stmt = $this->pdo->prepare($ss);
         $stmt->execute(array($_POST['email'], $_POST['subject'], $_POST['body']));
-        $sendEmail = new sendEmail;
-        sendEmail->email($_POST['email'], $_POST['subject'], $_POST['body']);
+        $mailer = new Mailer;
+        $mailer->email($_POST['email'], $_POST['subject'], $_POST['body']);
       }catch(PDOException $e){
         echo e->getMessage();
       }

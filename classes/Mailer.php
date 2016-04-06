@@ -1,5 +1,5 @@
 <?php
-class SendEmail{
+class Mailer{
 	public function __construct(){
 
   }
